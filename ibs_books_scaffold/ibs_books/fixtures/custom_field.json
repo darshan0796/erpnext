@@ -1,0 +1,42 @@
+[
+ {
+  "doctype": "Custom Field",
+  "dt": "Quotation",
+  "fieldname": "custom_quote_status",
+  "label": "Quote Status",
+  "fieldtype": "Select",
+  "options": "Draft\nSent\nAccepted\nDeclined\nExpired",
+  "default": "Draft",
+  "insert_after": "status",
+  "read_only": 1,
+  "in_standard_filter": 1,
+  "in_list_view": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Quotation",
+  "fieldname": "custom_sent_on",
+  "label": "Sent On",
+  "fieldtype": "Datetime",
+  "insert_after": "custom_quote_status",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Quotation",
+  "fieldname": "custom_accepted_on",
+  "label": "Accepted On",
+  "fieldtype": "Datetime",
+  "insert_after": "custom_sent_on",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Quotation",
+  "fieldname": "custom_declined_reason",
+  "label": "Declined Reason",
+  "fieldtype": "Small Text",
+  "insert_after": "custom_accepted_on",
+  "depends_on": "eval:doc.custom_quote_status=='Declined'"
+ }
+]
